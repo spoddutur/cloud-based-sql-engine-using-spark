@@ -54,7 +54,7 @@ public class TestThriftClient {
         System.out.println("Running: " + sql);
         res = stmt.executeQuery(sql);
         while (res.next()) {
-            System.out.println(String.valueOf(res.getString(2)) + "\t" + res.getString(7));
+            System.out.println(String.valueOf(res.getString(1)) + "\t" + res.getString(2));
         }
     }
 }
