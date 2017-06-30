@@ -15,13 +15,18 @@ To know more details about this, please refer to [this](https://spoddutur.github
 - src/main/java/MainApp.scala: Spark 2.1 implementation where it starts SparkSession and registers data from input.json with SparkSQL. (To keep the spark-session alive, there's a continuous while-loop in there).
 - src/test/java/TestThriftClient.java: Java class to demo how to connect to thrift server and query the registered data
 
-### How to register data with SparkSQL?
+### How to run this project?
+This project does 2 things:
+1. Demo how to register data with SparkSql
+2. Demo how to query registered data via Spark ThriftServer
+
+### Demo how to register data with SparkSql
 - Download this project.
 - Build it: `mvn clean install` and
 - Run MainApp: `spark-submit MainApp cloud-based-sql-engine-using-spark.jar`. Tht's it! 
 - It'll register some sample data in `records` table with SparkSQL.
 
-### Now that we registered data, let's see how to access and query data via Spark Thrift Server?
+### Demo how to query registered data via Spark Thrift Server?
 For this, first connect to Spark ThriftServer. Once the connection is established, just like HiveServer2, access Hive or Spark temp tables to run the sql queries on ApacheSpark framework. I'll show 2 ways to do this:
 
 1. **Beeline:** Perhaps, the simplest is to use beeline command-line tool provided in Spark's bin folder. 
@@ -43,7 +48,7 @@ Enter password for jdbc:hive2://localhost:10000:
 ### Requirements
 - Spark 2.1.0, Java 1.8 and Scala 2.11
 
-References:
+### References:
 [MapR Docs on SparkThriftServer](http://maprdocs.mapr.com/home/Spark/SparkSQLThriftServer.html)
 [Hortonworks on integrating Spark With ext](https://community.hortonworks.com/articles/29928/using-spark-to-virtually-integrate-hadoop-with-ext.html)
 [ALl Details and references listed in my Blog](https://spoddutur.github.io/spark-notes/spark-as-cloud-based-sql-engine-via-thrift-server) blog.
