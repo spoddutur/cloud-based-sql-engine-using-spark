@@ -11,9 +11,9 @@ Traditional relational Database engines like SQL had scalability problems and so
 To know more details about this, please refer to [this](https://spoddutur.github.io/spark-notes/spark-as-cloud-based-sql-engine-via-thrift-server) blog.
 
 ### Structure of the project:
-- data: Contains input json used in MainApp to register sample data with SparkSql.
-- src/main/java/MainApp.scala: Spark 2.1 implementation where it starts SparkSession and registers data from input.json with SparkSQL. (To keep the spark-session alive, there's a continuous while-loop in there).
-- src/test/java/TestThriftClient.java: Java class to demo how to connect to thrift server and query the registered data
+- **data:** Contains input json used in MainApp to register sample data with SparkSql.
+- **src/main/java/MainApp.scala:** Spark 2.1 implementation where it starts SparkSession and registers data from input.json with SparkSQL. (To keep the spark-session alive, there's a continuous while-loop in there).
+- **src/test/java/TestThriftClient.java:** Java class to demo how to connect to thrift server and query the registered data
 
 ### How to run this project?
 This project does 2 things:
