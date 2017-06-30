@@ -2,20 +2,28 @@
 This project shows how to use SPARK as Cloud-based SQL Engine and expose your big-data as a JDBC/ODBC data source via the Spark thrift server. 
 
 ### Central Idea:
-Traditional relational Database engines like SQL had scalability problems and so evolved couple of SQL-on-Hadoop frameworks like Hive, Cloudier Impala, Presto etc. These frameworks are essentially cloud-based solutions and they all come with their own advantages and limitations. This project will demo how SparkSQL comes across as one more SQL-on-Hadoop framework. 
+Traditional relational Database engines like SQL had scalability problems and so evolved couple of SQL-on-Hadoop frameworks like Hive, Cloudier Impala, Presto etc. These frameworks are essentially cloud-based solutions and they all come with their own advantages and limitations. This project will demo how SparkSQL comes across as one more SQL-on-Hadoop framework as listed below:
+- Data from multiple sources can be pushed into Spark and then exposed as SQLtable
+- These tables are then made accessible as a JDBC/ODBC data source via the Spark thrift server.
+- Spark thrift server is pretty similar to HiveServer2 thrift. But, HiveServer2 submits the sql queries as Hive MapReduce job whereas Spark thrift server will use Spark SQL engine which underline uses full spark capabilities.
 
 ### Complete Guide
 To know more details about this, please refer to [this](https://spoddutur.github.io/spark-notes/spark-as-cloud-based-sql-engine-via-thrift-server) blog.
 
-### What is the role of Spark Thrift Server in this?
-- SparkSQL enables fast, in-memory integration of external data sources with Hadoop for BI access over JDBC/ODBC. Spark ThriftServer makes this data queryable as JDBC/ODBC source.
-- Spark Thrift Server is similar to HiveServer2 Thrift, instead of submitting sql queries as Hive MapReduce job, spark thrift will use Spark SQL engine which inturn uses full spark capabilities. 
-Following picture depicts the same:
+### Structure of the project:
+- data: Contains input json used in MainApp to register sample data with SparkSql.
+- src/main/java/MainApp.scala: Spark 2.1 implementation where it starts SparkSession and registers data from input.json with SparkSQL. (To keep the spark-session alive, there's a continuous while-loop in there).
+- src/test/java/TestThriftClient.java: Java class to demo how to connect to thrift server and query the registered data
 
-![Image](https://user-images.githubusercontent.com/22542670/27724829-47acbe3e-5d91-11e7-8461-fe22d87699ba.png)
+### How to register data with SparkSQL?
+- Download this project.
+- Build it: `mvn clean install` and
+- Run MainApp: `spark-submit MainApp cloud-based-sql-engine-using-spark.jar`. Tht's it! 
+- It'll register some sample data in `records` table with SparkSQL.
 
-### How to connect to Spark Thrift Server?
-To connect to Spark ThriftServer, use JDBC/ODBC driver just like HiveServer2 and access Hive or Spark temp tables to run the sql queries on ApacheSpark framework. There are couple of ways to connect to it. 
+### Now that we registered data, let's see how to access and query data via Spark Thrift Server?
+For this, first connect to Spark ThriftServer. Once the connection is established, just like HiveServer2, access Hive or Spark temp tables to run the sql queries on ApacheSpark framework. I'll show 2 ways to do this:
+
 1. **Beeline:** Perhaps, the simplest is to use beeline command-line tool provided in Spark's bin folder. 
 ```markdown
 `$> beeline`
@@ -37,3 +45,5 @@ Enter password for jdbc:hive2://localhost:10000:
 
 References:
 [MapR Docs on SparkThriftServer](http://maprdocs.mapr.com/home/Spark/SparkSQLThriftServer.html)
+[Hortonworks on integrating Spark With ext](https://community.hortonworks.com/articles/29928/using-spark-to-virtually-integrate-hadoop-with-ext.html)
+[ALl Details and references listed in my Blog](https://spoddutur.github.io/spark-notes/spark-as-cloud-based-sql-engine-via-thrift-server) blog.
