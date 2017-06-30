@@ -43,12 +43,12 @@ Enter password for jdbc:hive2://localhost:10000:
 // run your sql queries and access data..
 `jdbc:hive2://localhost:10000> show tables;,`
 ```
-2. **Java JDBC:** Please refer to this project's test folder where I've shared a java example - `TestThriftClient` class - to demo the same.
+2. **Java JDBC:** Please refer to this project's test folder where I've shared a java example `TestThriftClient.java` to demo the same.
 
 ### Requirements
 - Spark 2.1.0, Java 1.8 and Scala 2.11
 
 ### References:
-[MapR Docs on SparkThriftServer](http://maprdocs.mapr.com/home/Spark/SparkSQLThriftServer.html)
-[Hortonworks on integrating Spark With ext](https://community.hortonworks.com/articles/29928/using-spark-to-virtually-integrate-hadoop-with-ext.html)
-[ALl Details and references listed in my Blog](https://spoddutur.github.io/spark-notes/spark-as-cloud-based-sql-engine-via-thrift-server) blog.
+- [MapR Docs on SparkThriftServer](http://maprdocs.mapr.com/home/Spark/SparkSQLThriftServer.html)
+- [Hortonworks on integrating Spark With ext](https://community.hortonworks.com/articles/29928/using-spark-to-virtually-integrate-hadoop-with-ext.html)
+- [ALl Details and references listed in my Blog](https://spoddutur.github.io/spark-notes/spark-as-cloud-based-sql-engine-via-thrift-server) blog.
