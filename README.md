@@ -8,7 +8,8 @@ Traditional relational Database engines like SQL had scalability problems and so
 To know more details about this, please refer to [this](https://spoddutur.github.io/spark-notes/spark-as-cloud-based-sql-engine-via-thrift-server) blog.
 
 ### What is the role of Spark Thrift Server in this?
-SparkSQL enables fast, in-memory integration of external data sources with Hadoop for BI access over JDBC/ODBC. Spark ThriftServer makes this data queryable as JDBC/ODBC source.Spark Thrift Server is similar to HiveServer2 Thrift, instead of submitting sql queries as Hive MapReduce job, spark thrift will use Spark SQL engine which inturn uses full spark capabilities. 
+- SparkSQL enables fast, in-memory integration of external data sources with Hadoop for BI access over JDBC/ODBC. Spark ThriftServer makes this data queryable as JDBC/ODBC source.
+- Spark Thrift Server is similar to HiveServer2 Thrift, instead of submitting sql queries as Hive MapReduce job, spark thrift will use Spark SQL engine which inturn uses full spark capabilities. 
 Following picture depicts the same:
 
 ![Image](https://user-images.githubusercontent.com/22542670/27724829-47acbe3e-5d91-11e7-8461-fe22d87699ba.png)
