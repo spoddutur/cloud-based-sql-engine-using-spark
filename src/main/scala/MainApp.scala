@@ -23,9 +23,9 @@ object MainApp {
 
     // For simplicity, Iam loading data from one file for now..
     // But, in reality, this records dataset can be some real-time continuous streaming data
-    val records = spark.read.format("json").load("/Users/surthi/Downloads/delme.json")
+    val records = spark.read.format("json").load("data/records.json")
     records.show()
-   // records.write.saveAsTable("records")
+    records.write.saveAsTable("records")
 
     // This loop will keep the session alive
     while (true) {

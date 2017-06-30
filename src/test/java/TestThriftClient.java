@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.DriverManager;
 
-
 /**
  * This is a test case that connects to sprak's thrift server and asserts that the data is present.
  * In this example, 3 asserts are done: "show tables", "describe table <table-name>" and "select * from <table-name>".
@@ -26,7 +25,7 @@ public class TestThriftClient {
         }
 
         // Change the connection-url, username and password accordingly
-        String connUrl = "jdbc:hive2://172.20.1.190:10000/default";
+        String connUrl = "jdbc:hive2://localhost:10000/default";
         String username = "";
         String password = "";
 
@@ -42,7 +41,7 @@ public class TestThriftClient {
         }
 
         // describe table
-        String tableName = "hiveivnews";
+        String tableName = "records";
         sql = "describe " + tableName;
         System.out.println("Running: " + sql);
         res = stmt.executeQuery(sql);
