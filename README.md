@@ -22,17 +22,17 @@ Following picture illustrates how ApacheSpark can be used as SQL-on-Hadoop frame
 - **src/test/java/TestThriftClient.java:** Java class to demo how to connect to thrift server as JDBC source and query the registered data
 
 ## 4. How to run this project?
-This project does 2 things:
-4.1. Demo how to register data with SparkSql
-4.2. Demo how to query registered data via Spark ThriftServer - using **Beeline** and **JDBC**
+This project does demo 2 things:
+- 4.1. How to register data with SparkSql
+- 4.2. How to query registered data via Spark ThriftServer - using **Beeline** and **JDBC**
 
-### 4.1 Demo how to register data with SparkSql
+### 4.1 How to register data with SparkSql
 - Download this project.
 - Build it: `mvn clean install` and
 - Run MainApp: `spark-submit MainApp cloud-based-sql-engine-using-spark.jar`. Tht's it! 
 - It'll register some sample data in `records` table with SparkSQL.
 
-### 4.2 Demo how to query registered data via Spark Thrift Server using Beeline and JDBC?
+### 4.2 How to query registered data via Spark Thrift Server using Beeline and JDBC?
 For this, first connect to Spark ThriftServer. Once the connection is established, just like HiveServer2, access Hive or Spark temp tables to run the sql queries on ApacheSpark framework. I'll show 2 ways to do this:
 
 1. **Beeline:** Perhaps, the simplest is to use beeline command-line tool provided in Spark's bin folder. 
