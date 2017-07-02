@@ -2,7 +2,12 @@
 This project shows how to use SPARK as Cloud-based SQL Engine and expose your big-data as a JDBC/ODBC data source via the Spark thrift server. 
 
 ### Central Idea
-Traditional relational Database engines like SQL had scalability problems and so evolved couple of SQL-on-Hadoop frameworks like Hive, Cloudier Impala, Presto etc. These frameworks are essentially cloud-based solutions and they all come with their own advantages and limitations. This project will demo how SparkSQL comes across as one more SQL-on-Hadoop framework which works as listed below:
+Traditional relational Database engines like SQL had scalability problems and so evolved couple of SQL-on-Hadoop frameworks like Hive, Cloudier Impala, Presto etc. These frameworks are essentially cloud-based solutions and they all come with their own advantages and limitations. This project will demo how SparkSQL comes across as one more SQL-on-Hadoop framework.
+
+### Architecture
+Following picture illustrates the idea we discussed above:
+<img src="https://user-images.githubusercontent.com/22542670/27733176-54b684c2-5db2-11e7-946b-5b5ef5595e43.png" width="600" />
+
 - Data from multiple sources can be pushed into Spark and then exposed as SQLtable
 - These tables are then made accessible as a JDBC/ODBC data source via the Spark thrift server.
 - Multiple clients like ```Beeline CLI```, ```JDBC```, ```ODBC``` or ```BI tools like Tableau``` connect to Spark thrift server.
@@ -10,10 +15,6 @@ Traditional relational Database engines like SQL had scalability problems and so
 - Spark Thrift basically works similar to HiveServer2 thrift where HiveServer2 submits the sql queries as Hive MapReduce job vs Spark thrift server will use Spark SQL engine which underline uses full spark capabilities.
 
 #### To know more about this topic, please refer to my blog [here](https://spoddutur.github.io/spark-notes/spark-as-cloud-based-sql-engine-via-thrift-server) where I briefed the concept in detail.
-
-### Architecture
-Following picture illustrates the idea we discussed above:
-<img src="https://user-images.githubusercontent.com/22542670/27733176-54b684c2-5db2-11e7-946b-5b5ef5595e43.png" width="600" />
 
 ### Structure of the project:
 - **data:** Contains input json used in MainApp to register sample data with SparkSql.
