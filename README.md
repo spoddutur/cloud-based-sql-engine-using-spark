@@ -5,7 +5,7 @@ This project shows how to use SPARK as Cloud-based SQL Engine and expose your bi
 Traditional relational Database engines like SQL had scalability problems and so evolved couple of SQL-on-Hadoop frameworks like Hive, Cloudier Impala, Presto etc. These frameworks are essentially cloud-based solutions and they all come with their own advantages and limitations. This project will demo how SparkSQL comes across as one more SQL-on-Hadoop framework.
 
 ### Architecture
-Following picture illustrates the idea we discussed above:
+Following picture illustrates how ApacheSpark can be used as SQL-on-Hadoop framework to serve your big-data as a JDBC/ODBC data source via the Spark thrift server.:
 <img src="https://user-images.githubusercontent.com/22542670/27733176-54b684c2-5db2-11e7-946b-5b5ef5595e43.png" width="600" />
 
 - Data from multiple sources can be pushed into Spark and then exposed as SQLtable
