@@ -29,7 +29,7 @@ This project does demo 2 things:
 ### 4.1 How to register data with SparkSql
 - Download this project.
 - Build it: `mvn clean install` and
-- Run MainApp: `spark-submit MainApp cloud-based-sql-engine-using-spark.jar`. Tht's it! 
+- Run MainApp: `spark-submit --class MainApp cloud-based-sql-engine-using-spark.jar`. Tht's it! 
 - It'll register some sample data in `records` table with SparkSQL.
 
 ### 4.2 How to query registered data via Spark Thrift Server using Beeline and JDBC?
